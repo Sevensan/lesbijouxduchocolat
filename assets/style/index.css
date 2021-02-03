@@ -1,0 +1,447 @@
+/* RESET CSS */
+*{
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+#logo{
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* BODY */
+
+body{
+    background: rgba(10, 10, 10,1);
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#background{
+    position: absolute;
+    background: url('../img/background.jpg');
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    filter: opacity(.1);
+    top: 0;
+    left: 0;
+}
+
+h1, h2{
+    text-align: center;
+    margin: 1rem;
+}
+
+/* MENUS */
+nav{
+    position: fixed;
+    top: 0;
+    background: black;
+    display: flex;
+    flex-direction: row;
+    z-index: 1000;
+    transition: .5s all;
+    width: 100vw;
+}
+#navRow{
+    position: relative;
+    width: 100%;
+}
+.row{
+    margin-left: 0 !important;
+}
+#borderNav{
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transition: .5s all;
+    background: rgba(218,165,32,1);
+}
+
+.menus{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.content-chocolat, .content-informations, .content-formulaire{
+    display: flex;
+    justify-content: center;
+}
+
+.content-chocolat:hover, .content-informations:hover, .content-formulaire:hover{
+    cursor: pointer;
+}
+.menu{
+    overflow: hidden;
+}
+
+.menu h3{
+    position: relative;
+    margin-right: .5rem;
+    padding-left: 7px;
+}
+
+.menu span{
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(370deg, rgba(37,37,37,1) 0%, rgba(218,165,32,1) 100%);
+    position: absolute;
+    left: 0;
+    bottom: -200%;
+    margin-right: .3rem;
+}
+.menu:hover span{
+    animation: bottomToUp 1s linear infinite;
+}
+
+
+/* SECTION DE RECHERCHE */
+
+.selectSearch, .search{
+    animation: anim .5s alternate;
+    margin: 1rem;
+    transition: .5s all;
+}
+
+.icons{
+    margin-top: 1rem;
+}
+
+.icons ul{
+    display: flex;
+}
+
+.imgCat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    transition: .5s all;
+    animation: product .5s ease;
+}
+
+#imgCat{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.bgCat{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0,.5);
+    z-index: 1;
+    transition: .5s all;
+}
+/* .imgCat::before{
+    content: "";
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+*/
+.imgCat:hover .bgCat {
+    background: rgba(0, 0, 0, 0);
+} 
+
+.textImgCat{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    z-index: 2;
+    /* align-items: center; */
+    /* height: 100%;
+    justify-content: center;
+    display: flex;
+    */
+}
+.searchBar, .searchOption{
+    font-size: 2rem;
+    margin: 0rem 3rem;
+    display: flex;
+    justify-content: center;
+    transition: .5s;
+}
+.searchBar p, .searchOption p{
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.searchBar:hover, .searchOption:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.cancelSearch{
+    text-align: center;
+    border: 2px goldenrod solid;
+    padding: 1rem;
+    transition: .5s all;
+    font-size: 1rem;
+    animation: cancel .5s alternate forwards;
+
+}
+.cancelSearch:hover{
+    border: 2px white solid;
+    background: rgba(218, 165, 32, 0.37);
+    cursor: pointer;
+}
+
+.rotation i{
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;  
+}
+.rotation-down i{
+    animation: rotate-down 0.5s ease forwards;
+}
+
+/* CONTENU */
+
+.imgChocolat{
+    border-radius: 50%;
+    border: 2px goldenrod solid;
+    width: 10rem;
+}
+
+.product{
+    animation: product .5s alternate;
+    transition: .5s;
+    border: none;
+    overflow: hidden;
+    background: rgba(10, 10, 10,1);
+}
+
+.product:hover{
+    transform: scale(1.1);
+    z-index: 1;
+}
+.product:hover .borderTop{
+    animation: leftToRight 6s infinite;
+}
+.product:hover .borderBottom{
+    animation: rightToLeft 6s infinite;
+}
+.product:hover .borderLeft{
+    animation: bottomToUp 3s infinite;
+}
+.product:hover .borderRight{
+    animation: topToDown 3s infinite;
+}
+
+.borderTop{
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: .5s;
+    border-radius: 50%;
+    background: linear-gradient(370deg, rgba(52,58,64,1) 0%, rgba(218,165,32,.5) 100%);
+}
+.borderBottom{
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: -100%;
+    transition: .5s;
+    border-radius: 50%;
+    background: linear-gradient(370deg, rgba(52,58,64,1) 0%, rgba(218,165,32,.5) 100%);
+}
+.borderLeft{
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    transition: .5s;
+    border-radius: 50%;
+    background: linear-gradient(370deg, rgba(52,58,64,1) 0%, rgba(218,165,32,.5) 100%);
+}
+.borderRight{
+    height: 100%;
+    width: 2px;
+    position: absolute;
+    top: -100%;
+    right: 0;
+    transition: .5s;
+    border-radius: 50%;
+    background: linear-gradient(370deg, rgba(52,58,64,1) 0%, rgba(218,165,32,.5) 100%);
+}
+
+
+/* INFORMATIONS */
+.informations{
+    animation: downToUp .5s;
+    transition: .5s all;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.informations iframe{
+    height: 10rem;
+}
+
+
+/* pour les formats en dessous de 576px */
+@media screen and (max-width: 576px) {
+    #logo{
+        height: 10rem;
+    }
+    .menu h3{
+        font-size: 2.2rem;
+    }
+    .menu h3:nth-child(2), .menu h3:nth-child(3){
+        margin-top: .5rem;
+    }
+}
+
+
+/* pour les formats en dessous de 640px */
+@media screen and (min-width: 577px) and (max-width: 640px) {
+    .searchBar p, .searchOption p{
+        display: none;
+    }
+    .menu h3{
+        font-size: 1.5rem;
+    }
+
+  }
+
+
+/* ANIMATION */
+
+@keyframes downToUp{
+        from{
+            bottom: -100%;
+        }
+        to{
+            bottom: 0;
+        }
+    }
+
+@keyframes anim{
+    from{
+        transform: scaleX(0);
+        opacity: 0;
+    }
+    to {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+}
+@keyframes cancel{
+    from{
+        margin: 0;
+    }
+    to{
+        margin: 1rem;
+    }
+}
+@keyframes product{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+  /* @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+              transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+    }
+  } */
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+    }
+    100% {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg);
+    }
+  }
+
+    /* @-webkit-keyframes rotate-down {
+    0% {
+      -webkit-transform: rotateY(0);
+              transform: rotateY(0);
+              
+    }
+    100% {
+      -webkit-transform: rotateY(180deg);
+              transform: rotateY(180deg);
+              
+    }
+  } */
+  @keyframes rotate-down {
+    0% {
+      -webkit-transform: rotateZ(0);
+              transform: rotateZ(0);
+              transform-origin: 50% 10px;
+              
+    }
+    100% {
+      -webkit-transform: rotateZ(180deg);
+              transform: rotateZ(180deg);
+              transform-origin: 50% 10px;
+              
+    }
+  }
+
+  @keyframes bottomToUp{
+      0%{
+        bottom: -100%;
+      }
+      100%{
+        bottom: 100%;
+      }
+  }
+
+  @keyframes leftToRight{
+          0%{
+            left: -100%;
+          }
+          100%{
+            left: 100%;
+          }
+  }
+  @keyframes topToDown{
+    0%{
+      top: -100%;
+    }
+    100%{
+      top: 100%;
+    }
+}
+@keyframes rightToLeft{
+    0%{
+      right: -100%;
+    }
+    100%{
+      right: 100%;
+    }
+}
+
+  
